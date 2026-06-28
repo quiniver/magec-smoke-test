@@ -17,7 +17,6 @@ class TestReverseString:
         assert reverse_string("") == ""
 
     def test_reverse_palindrome(self):
-        # Reversing a palindrome should give the same string
         assert reverse_string("racecar") == "racecar"
 
     def test_reverse_with_spaces(self):
@@ -59,7 +58,6 @@ class TestIsPalindrome:
         assert is_palindrome("A") is True
 
     def test_palindrome_with_spaces(self):
-        # "A man a plan a canal Panama" -> "amanaplanacanalpanama"
         assert is_palindrome("A man a plan a canal Panama") is True
 
     def test_non_palindrome_with_spaces(self):
@@ -78,7 +76,7 @@ class TestIsPalindrome:
 
     def test_special_characters_not_stripped(self):
         # Only spaces are removed, not other characters.
-        # "a!b" -> "a!b" reversed is "b!a", not equal -> False
+        # "a!b" reversed is "b!a" -> not equal -> False
         assert is_palindrome("a!b") is False
         # "a a" -> "aa" reversed is "aa" -> True
         assert is_palindrome("a a") is True
@@ -120,9 +118,7 @@ class TestCountVowels:
         assert count_vowels("python") == 1
 
     def test_y_is_not_vowel(self):
-        # 'y' is not counted as a vowel, but 'e' is
         assert count_vowels("sky") == 0
         # "yes" has 'e' as a vowel, so count is 1
         assert count_vowels("yes") == 1
-        # "rhythm" has no standard vowels
         assert count_vowels("rhythm") == 0
