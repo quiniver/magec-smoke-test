@@ -77,8 +77,10 @@ class TestIsPalindrome:
         assert is_palindrome("ab") is False
 
     def test_special_characters_not_stripped(self):
-        # Only spaces are removed, not other characters
-        assert is_palindrome("a!a") is False
+        # Only spaces are removed, not other characters.
+        # "a!b" -> "a!b" reversed is "b!a", not equal -> False
+        assert is_palindrome("a!b") is False
+        # "a a" -> "aa" reversed is "aa" -> True
         assert is_palindrome("a a") is True
 
 
@@ -118,5 +120,9 @@ class TestCountVowels:
         assert count_vowels("python") == 1
 
     def test_y_is_not_vowel(self):
+        # 'y' is not counted as a vowel, but 'e' is
         assert count_vowels("sky") == 0
-        assert count_vowels("yes") == 0
+        # "yes" has 'e' as a vowel, so count is 1
+        assert count_vowels("yes") == 1
+        # "rhythm" has no standard vowels
+        assert count_vowels("rhythm") == 0
