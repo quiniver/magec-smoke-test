@@ -32,7 +32,6 @@ class TestAdd:
         assert add(-100, 100) == 0
 
     def test_add_returns_float_type(self):
-        # Python returns float for float inputs
         result = add(1.0, 2.0)
         assert isinstance(result, float)
 
@@ -120,7 +119,6 @@ class TestDivide:
         assert divide(1, 1) == 1.0
 
     def test_divide_returns_float(self):
-        # Division always returns float in Python 3
         result = divide(5, 2)
         assert isinstance(result, float)
 
